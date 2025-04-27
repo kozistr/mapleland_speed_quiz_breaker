@@ -175,3 +175,5 @@ cython_debug/
 
 quiz/
 tests/
+*.png
+*.jpg
