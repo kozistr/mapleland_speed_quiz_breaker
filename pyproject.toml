@@ -1,0 +1,91 @@
+[tool.poetry]
+name = "mapleland-speed-quiz-breaker"
+version = "1.0.0"
+description = "search query image from the Mapleland NPCs and Mobs"
+license = "Apache-2.0"
+authors = ["kozistr <kozistr@gmail.com>"]
+maintainers = ["kozistr <kozistr@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/kozistr/mapleland_speed_quiz_breaker"
+repository = "https://github.com/kozistr/mapleland_speed_quiz_breaker"
+keywords = [ "search", "Mapleland" ]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.12"
+numpy = "^2"
+torch = { version = ">=1.10", source = "torch" }
+
+[tool.poetry.group.dev.dependencies]
+isort = "^6"
+black = "^25"
+ruff = "*"
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[tool.ruff]
+src = ["sqb"]
+target-version = "py312"
+line-length = 119
+exclude = [
+    ".git",
+    ".github",
+    ".idea",
+    ".ipynb_checkpoints",
+    ".pytest_cache",
+    ".ruff_cache",
+    "character_images",
+    "gt",
+    "tests",
+    ".venv",
+    "__pypackages__",
+]
+
+[tool.ruff.lint]
+select = [
+    "A", "B", "C4", "D", "E", "F", "G", "I", "N", "S", "T", "ISC", "ICN", "W", "INP", "PIE", "T20", "RET", "SIM",
+    "TID", "ARG", "ERA", "RUF", "YTT", "PL", "Q"
+]
+ignore = [
+    "B905",
+    "D100", "D102", "D104", "D105", "D107", "D203", "D213", "D413",
+    "PLR0912", "PLR0913", "PLR0915", "PLR2004",
+    "Q003", "ARG002",
+]
+fixable = ["ALL"]
+unfixable = ["F401"]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+flake8-quotes.docstring-quotes = "double"
+flake8-quotes.inline-quotes = "single"
+
+[tool.ruff.lint.extend-per-file-ignores]
+"**/__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = false
+detect-same-package = true
+force-sort-within-sections = false
+known-first-party = ["sqb"]
+
+[tool.ruff.lint.pylint]
+max-args = 7
+
+[tool.ruff.format]
+quote-style = "single"
+
+[build-system]
+requires = ["poetry-core>=1.4.0"]
+build-backend = "poetry.core.masonry.api"
