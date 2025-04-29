@@ -24,7 +24,11 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.12"
 numpy = "^2"
-torch = { version = ">=1.10", source = "torch" }
+torch = { version = "^2", source = "torch" }
+opencv-python = "^4.11"
+clip = { git = "https://github.com/openai/CLIP", branch = "main" }
+matplotlib = "*"
+tqdm = "*"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^6"
