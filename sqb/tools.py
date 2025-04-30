@@ -12,6 +12,10 @@ def extract_character(
 ) -> np.ndarray | None:
     image = cv2.imread(str(image_path))
 
+    h, w, _ = image.shape
+    hm, wm = h // 20, w // 4
+    image = image[hm:-hm, wm:-wm]  # fmt: skip
+
     mask = cv2.inRange(cv2.cvtColor(image, cv2.COLOR_BGR2HSV), lower_blue, upper_blue)
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
