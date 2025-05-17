@@ -24,7 +24,7 @@
 
 2. 위와 같이 찍히고, 메랜 스크린샷 폴더에 이미지로 저장된다. (e.g. `C:\\Users\[계정 명]\Pictures\MapleStory Worlds`). (주의: 계정명은 영어를 권장합니다.)
 
-3. 스크린샷에서 퀴즈가 존재하는 영역을 탐지하고 캐릭터만 깔끔하게 자른다. (관련 로직인 `sqb/tools.py` -> `extract_character()`, `remove_empty_area()` 참고)
+3. 가장 최신의 스샷 한 장을 불러오고, 스크린샷에서 퀴즈가 존재하는 영역을 탐지해서 캐릭터만 깔끔하게 자른다. (관련 로직인 `sqb/tools.py` -> `extract_character()`, `remove_empty_area()` 참고)
 
 4. 반자동으로 수집한 족보 데이터에서 해당 캐릭터와 가장 유사한 이미지 5개를 검색한다.
 
