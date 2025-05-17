@@ -33,15 +33,15 @@
 ## Requirement
 
 * Python3 (3.10 이상 권장)
-* GPU 권장 (CPU도 가능은 함)
+* GPU 권장 (CPU도 가능은 함, GTX 1060 에서도 빠르게 돌아감)
 * jupyter notebook 필요
 * dependencies는 `pyproject.toml` 또는 `requirements.txt` 참고
-    * numpy = "^2"
+    * numpy
     * torch
-    * opencv-python = "^4.11"
-    * open_clip_torch = "*"
-    * matplotlib = "*"
-    * tqdm = "*"
+    * opencv-python
+    * open_clip_torch
+    * matplotlib
+    * tqdm
 
 ## Usage
 
