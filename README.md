@@ -74,7 +74,7 @@
 1. Psc (스크린 캡쳐)
 2. alt+tab
 3. cell 7 마우스 한번 클릭
-4. enter
+4. shift+enter (cell 실행)
 5. alt+tab
 
 ## 성과
